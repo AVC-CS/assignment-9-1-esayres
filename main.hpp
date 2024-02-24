@@ -14,12 +14,21 @@ int getLength(struct Node *head);
 struct Node *sortNumbers(struct Node *head);
 struct Node *swapNode(struct Node *prev, struct Node *ptr);
 
-struct Node *makeNumbers(int N)
-{
-    /*******************************
-     * Code your program here
-     *******************************/
+struct Node *makeNumbers(int N){
+    struct Node *head, *tmp, *prev;
+    for (int i = 0; i < N; i++){
+        tmp = (struct Node *)malloc(sizeof(struct Node));
+        tmp->value = rand() % 100;
+        tmp->next = NULL;
+        if (i == 0)
+            head = tmp;
+        else
+            prev->next = tmp;
+        prev = tmp;
+    }
+    return head;
 }
+
 void printNumbers(struct Node *head)
 {
     struct Node *ptr = head;
@@ -29,9 +38,7 @@ void printNumbers(struct Node *head)
         ptr = ptr->next;
     }
     cout << endl;
-    /*******************************
-     * Code your program here
-     *******************************/
+    
 }
 int getLength(struct Node *head)
 {
