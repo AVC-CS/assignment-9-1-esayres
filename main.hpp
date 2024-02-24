@@ -40,11 +40,15 @@ void printNumbers(struct Node *head)
     cout << endl;
     
 }
-int getLength(struct Node *head)
-{
-    /*******************************
-     * Code your program here
-     *******************************/
+int getLength(struct Node *head){
+    struct Node *ptr = head;
+    int  cnt = 0;
+    while (ptr != NULL)
+    {
+        cnt++;  
+        ptr = ptr->next;
+    }
+    return cnt;
 }
 struct Node *sortNumbers(struct Node *head)
 {
